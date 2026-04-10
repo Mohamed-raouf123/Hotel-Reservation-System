@@ -57,6 +57,14 @@ public class Room<amenities> {
         }
         amenities.add(amenity);
     }
+    //Method to book a room
+    public void bookRoom(){
+        this.isAvailable = false;
+    }
+    //Method to release a room
+    public void releaseRoom(){
+        this.isAvailable = true;
+    }
 
     //Method to remove unwanted amenities
     public void removeAmenity(int id){

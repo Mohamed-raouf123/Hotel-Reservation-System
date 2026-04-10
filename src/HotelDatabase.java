@@ -46,7 +46,7 @@ public static ArrayList<Reservation> reservations = new ArrayList<>();
         HotelDatabase.populateRoomtype();
         HotelDatabase.populateAmenities();
         HotelDatabase.populateRooms();
-        for(int i = 0; i<rooms.size();i++){
+        for(int i = 0; i<HotelDatabase.rooms.size();i++){
             System.out.println(rooms.get(i));
         }
     }
