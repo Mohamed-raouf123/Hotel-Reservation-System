@@ -40,14 +40,25 @@ public static ArrayList<Reservation> reservations = new ArrayList<>();
         room102.addAmenity(amenities.get(0));
         room102.addAmenity(amenities.get(1));
         room102.addAmenity(amenities.get(2));
+    }
+    public static void populateStaff(){
+        Admin admin1 = new Admin("mohamed raouf","eng.raouf123");
+        Admin admin2 = new Admin("yousef sameh", "yousef.ali321");
+        Receptionist receptionist1 = new Receptionist("saja yousef","eng.saja521");
+        Receptionist receptionist2 = new Receptionist("Omar abdelrahman","omar.rhman5213");
+        admins.add(admin1);
+        admins.add(admin2);
+        receptionists.add(receptionist1);
+        receptionists.add(receptionist2);
 
     }
     public static void main(String[] args){
         HotelDatabase.populateRoomtype();
         HotelDatabase.populateAmenities();
         HotelDatabase.populateRooms();
+        HotelDatabase.populateStaff();
         for(int i = 0; i<HotelDatabase.rooms.size();i++){
-            System.out.println(rooms.get(i));
+            System.out.println(HotelDatabase.rooms.get(i));
         }
     }
 
