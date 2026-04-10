@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Room<amenities> {
     //Attributes
-    private int rn;
+    private int roomnumber;
     private boolean isAvailable;
     private RoomType roomType;
     private ArrayList<Amenity> amenities;
     //constructor
     public Room(int rn, RoomType roomtype){
-        this.rn = rn;
+        this.roomnumber = rn;
         this.roomType=roomtype;
         this.isAvailable= true;
         this.amenities = new ArrayList<Amenity>();
@@ -26,7 +26,7 @@ public class Room<amenities> {
     public void setRn(int rn) {
         if(rn <= 0){throw new IllegalArgumentException("Room number cannot be negative OR Room number is unavailable");
         }
-        this.rn = rn;
+        this.roomnumber = rn;
     }
 
     public void setRoomType(RoomType roomType) {
@@ -44,8 +44,8 @@ public class Room<amenities> {
         return roomType;
     }
 
-    public int getRn() {
-        return rn;
+    public int getRoomnumber() {
+        return roomnumber;
     }
 
     public boolean isAvailable() {
@@ -79,7 +79,7 @@ public class Room<amenities> {
     @Override
     public String toString() {
         return "ROOM{" +
-                "Room number=" + rn +
+                "Room number=" + roomnumber +
                 ", Is it availiabe='" + isAvailable + "'" +
                 ", RoomType=" + roomType +
                 ", Amenities availiabe=" + amenities +

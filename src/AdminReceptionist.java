@@ -67,7 +67,7 @@ class Receptionist extends AdminReceptionist {
 
     void checkIn(int num) {
         for (int i = 0 ; i < HotelDatabase.rooms.size(); i++){
-            if (HotelDatabase.rooms.get(i).getRn() == num){
+            if (HotelDatabase.rooms.get(i).getRoomnumber() == num){
                 HotelDatabase.rooms.get(i).bookRoom();
             }
         }
@@ -76,7 +76,7 @@ class Receptionist extends AdminReceptionist {
 
     void checkOut(int n) {
         for (int i = 0 ; i < HotelDatabase.rooms.size(); i++){
-            if (HotelDatabase.rooms.get(i).getRn() == n){
+            if (HotelDatabase.rooms.get(i).getRoomnumber() == n){
                 HotelDatabase.rooms.get(i).releaseRoom();
             }
         }
@@ -110,7 +110,7 @@ class Admin extends AdminReceptionist {
 
     public void deleteRoom (int id){
         for (int i = 0 ; i <HotelDatabase.rooms.size();i++){
-            if(HotelDatabase.rooms.get(i).getRn() == id){
+            if(HotelDatabase.rooms.get(i).getRoomnumber() == id){
                 HotelDatabase.rooms.remove(i);
             }
         }
@@ -134,7 +134,7 @@ class Admin extends AdminReceptionist {
 
     public void updateRoom(int num, RoomType newRoomType){
         for (int i = 0 ; i < HotelDatabase.rooms.size(); i++){
-            if(HotelDatabase.rooms.get(i).getRn() == num){
+            if(HotelDatabase.rooms.get(i).getRoomnumber() == num){
                 HotelDatabase.rooms.get(i).setRoomType(newRoomType);
             }
         }

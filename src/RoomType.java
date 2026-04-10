@@ -44,7 +44,7 @@ public class RoomType {
         return capacity;
     }
 
-    public double getPrice() {
+    public double getPricePerNight() {
         return price;
     }
     //Method to print out Room info
