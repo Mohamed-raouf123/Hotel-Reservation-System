@@ -1,3 +1,5 @@
+package com.mycompany.uniproject;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class HotelDatabase {
@@ -50,6 +52,10 @@ public static ArrayList<Reservation> reservations = new ArrayList<>();
         admins.add(admin2);
         receptionists.add(receptionist1);
         receptionists.add(receptionist2);
+    }
+    public static void populateGuest(){
+        RoomPreferences roomPreferences1 = new RoomPreferences(roomTypes.get(2),5,false,true);
+        Guest guest1 = new Guest("Saeb alrayyes","SAEB_312", LocalDate.of(2007,4,13),1000,"1 Elsarayat St., Abbaseya, 11517 Cairo, Egypt",Gender.MALE,roomPreferences1);
 
     }
     public static void main(String[] args){
@@ -57,6 +63,7 @@ public static ArrayList<Reservation> reservations = new ArrayList<>();
         HotelDatabase.populateAmenities();
         HotelDatabase.populateRooms();
         HotelDatabase.populateStaff();
+        HotelDatabase.populateGuest();
         for(int i = 0; i<HotelDatabase.rooms.size();i++){
             System.out.println(HotelDatabase.rooms.get(i));
         }

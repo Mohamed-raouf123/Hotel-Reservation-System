@@ -1,3 +1,4 @@
+package com.mycompany.uniproject;
 import java.util.*;
 
 public abstract class AdminReceptionist {

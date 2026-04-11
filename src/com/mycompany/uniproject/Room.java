@@ -1,3 +1,4 @@
+package com.mycompany.uniproject;
 import java.util.ArrayList;
 
 public class Room<amenities> {

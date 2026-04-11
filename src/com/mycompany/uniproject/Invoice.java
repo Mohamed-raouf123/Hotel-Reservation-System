@@ -1,25 +1,39 @@
+package com.mycompany.uniproject;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class Invoice {
+    
+    // Attributes
     private static int invoiceCounter = 5000;
-
     private int invoiceId;
     private List<Reservation> reservations;
     private double totalAmount;
     private boolean paid;
     private LocalDate issueDate;
+    private PaymentMethod paymentMethod;
+    private LocalDate paymentDate;
 
+    // Constructor
     public Invoice(List<Reservation> reservations) {
         this.invoiceId = ++invoiceCounter;
         this.reservations = reservations;
         this.issueDate = LocalDate.now();
         this.paid = false;
-        this.totalAmount = reservations.stream()
-                .mapToDouble(Reservation::calculateTotal)
-                .sum();
+        this.totalAmount = reservations.stream().mapToDouble(Reservation::calculateTotal).sum();
     }
 
+    // Methods
+    public void generateInvoice() {
+        System.out.println("Invoice generated for amount: $" + totalAmount);
+    }
+
+    public void processPayment(PaymentMethod method) {
+        this.paymentMethod = method;
+        this.paymentDate = LocalDate.now();
+        System.out.println("Payment of $" + totalAmount + " processed via " + method);
+    }
     public void pay(double amount) {
         if (amount >= totalAmount) {
             this.paid = true;
@@ -29,9 +43,16 @@ public class Invoice {
         }
     }
 
-    // Getters
-    public int getInvoiceId() { return invoiceId; }
+    // Getters and Setters
     public double getTotalAmount() { return totalAmount; }
+    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
+
+    public PaymentMethod getPaymentMethod() { return paymentMethod; }
+    public void setPaymentMethod(PaymentMethod paymentMethod) { this.paymentMethod = paymentMethod; }
+
+    public LocalDate getPaymentDate() { return paymentDate; }
+    public void setPaymentDate(LocalDate paymentDate) { this.paymentDate = paymentDate; }
+    public int getInvoiceId() { return invoiceId; }
     public boolean isPaid() { return paid; }
     public LocalDate getIssueDate() { return issueDate; }
 

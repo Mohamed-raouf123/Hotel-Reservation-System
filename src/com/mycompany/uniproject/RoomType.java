@@ -1,3 +1,4 @@
+package com.mycompany.uniproject;
 public class RoomType {
     //Attributes
     private int id;

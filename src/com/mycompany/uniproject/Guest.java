@@ -1,3 +1,4 @@
+package com.mycompany.uniproject;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class Guest {
             System.out.println("Room #" + room.getRoomnumber() + " is not available.");
             return null;
         }
-        Reservation res = new Reservation(room, checkIn, checkOut);
+        Reservation res = new Reservation(this,room, checkIn, checkOut);
         reservations.add(res);
         System.out.println("Reservation confirmed: " + res);
         return res;
@@ -92,8 +93,8 @@ public class Guest {
     public void cancelReservation(int reservationId) {
         requireLogin();
         for (Reservation res : reservations) {
-            if (res.getReservationId() == reservationId && res.isActive()) {
-                res.cancel();
+            if (res.getReservationId() == reservationId && res.getStatus() == ReservationStatus.PENDING || res.getStatus() == ReservationStatus.CONFIRMED) {
+                res.cancelReservation();
                 System.out.println("Reservation #" + reservationId + " has been cancelled.");
                 return;
             }
@@ -105,7 +106,7 @@ public class Guest {
         requireLogin();
         List<Reservation> active = new ArrayList<>();
         for (Reservation r : reservations) {
-            if (r.isActive()) active.add(r);
+            if (r.getStatus() == ReservationStatus.PENDING || r.getStatus() == ReservationStatus.CONFIRMED) active.add(r);
         }
         if (active.isEmpty()) {
             System.out.println("No active reservations to check out from.");

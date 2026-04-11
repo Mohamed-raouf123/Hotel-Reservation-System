@@ -1,3 +1,4 @@
+package com.mycompany.uniproject;
 public class Amenity {
     //attributes
     private int id;

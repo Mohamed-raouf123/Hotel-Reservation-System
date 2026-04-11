@@ -1,4 +1,4 @@
-
+package com.mycompany.uniproject;
 public class RoomPreferences {
     private RoomType preferredRoomType;
     private int preferredFloor;
