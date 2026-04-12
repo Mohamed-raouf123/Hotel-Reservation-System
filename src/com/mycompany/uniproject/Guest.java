@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 public class Guest {
 
-    // ── Attributes ──────────────────────────────────────────────────────────
+    // Attributes
     private String username;
     private String password;       // validated
     private LocalDate dateOfBirth;
@@ -12,14 +12,15 @@ public class Guest {
     private String address;
     private Gender gender;         // enum: MALE, FEMALE
     private RoomPreferences roomPreferences;
+    private long phone;
 
     private List<Reservation> reservations;
     private boolean loggedIn;
 
-    // ── Constructor ──────────────────────────────────────────────────────────
+    //Constructor
     public Guest(String username, String password, LocalDate dateOfBirth,
                  double balance, String address, Gender gender,
-                 RoomPreferences roomPreferences) {
+                 RoomPreferences roomPreferences , long phone) {
         if (!isValidPassword(password)) {
             throw new IllegalArgumentException(
                 "Password must be at least 8 characters and contain a digit.");
@@ -33,15 +34,16 @@ public class Guest {
         this.roomPreferences = roomPreferences;
         this.reservations = new ArrayList<>();
         this.loggedIn = false;
+        this.phone = phone;
     }
 
-    // ── Password validation ──────────────────────────────────────────────────
+    //Password validation
     private boolean isValidPassword(String password) {
         if (password == null || password.length() < 8) return false;
         return password.chars().anyMatch(Character::isDigit);
     }
 
-    // ── Behaviors ────────────────────────────────────────────────────────────
+    //Behaviors
 
     public void register() {
         System.out.println("Guest '" + username + "' registered successfully.");
@@ -93,7 +95,7 @@ public class Guest {
     public void cancelReservation(int reservationId) {
         requireLogin();
         for (Reservation res : reservations) {
-            if (res.getReservationId() == reservationId && res.getStatus() == ReservationStatus.PENDING || res.getStatus() == ReservationStatus.CONFIRMED) {
+            if (res.getReservationId() == reservationId && (res.getStatus() == ReservationStatus.PENDING || res.getStatus() == ReservationStatus.CONFIRMED)) {
                 res.cancelReservation();
                 System.out.println("Reservation #" + reservationId + " has been cancelled.");
                 return;
@@ -134,12 +136,12 @@ public class Guest {
         }
     }
 
-    // ── Helper ───────────────────────────────────────────────────────────────
+    //Helper
     private void requireLogin() {
         if (!loggedIn) throw new IllegalStateException("Guest must be logged in first.");
     }
 
-    // ── Getters & Setters ────────────────────────────────────────────────────
+    //Getters & Setters
     public String getUsername() { return username; }
     public LocalDate getDateOfBirth() { return dateOfBirth; }
     public double getBalance() { return balance; }
