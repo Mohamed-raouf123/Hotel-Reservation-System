@@ -11,11 +11,11 @@ The Hotel Reservation System allows guests to register, browse available rooms, 
 
 # 👥 Team Members
 
- Mohamed Raouf
- Saja Yousef
- Yousef Sameh 
- Omar Abdelrahman
- Saeb Alrayyes
+[1] Mohamed Raouf
+[2] Saja Yousef
+[3] Yousef Sameh 
+[4] Omar Abdelrahman
+[5] Saeb Alrayyes
 
 
 # Features (Milestone 1)
