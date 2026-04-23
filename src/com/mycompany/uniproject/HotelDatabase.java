@@ -65,6 +65,8 @@ public class HotelDatabase {
     }
 
     public static void main(String[] args) {
+        MenuDisplay menu = new MenuDisplay();
+        menu.showBanner();
         HotelDatabase.populateRoomtype();
         HotelDatabase.populateAmenities();
         HotelDatabase.populateRooms();
