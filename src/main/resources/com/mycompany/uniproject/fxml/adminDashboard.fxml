@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.uniproject.controllers.AdminDashboardController"
+            prefWidth="800" prefHeight="600">
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15; -fx-background-color: #1a3a5c;">
+            <Label text="Admin Dashboard" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #1a3a5c;">
+            <Button fx:id="viewGuestsButton" text="View All Guests" onAction="#handleViewGuests" maxWidth="Infinity"/>
+            <Button fx:id="viewRoomsButton" text="View All Rooms" onAction="#handleViewRooms" maxWidth="Infinity"/>
+            <Button fx:id="viewReservationsButton" text="View All Reservations" onAction="#handleViewReservations" maxWidth="Infinity"/>
+            <Button fx:id="addRoomButton" text="Add Room" onAction="#handleAddRoom" maxWidth="Infinity"/>
+            <Button fx:id="deleteRoomButton" text="Delete Room" onAction="#handleDeleteRoom" maxWidth="Infinity"/>
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    <center>
+        <ListView fx:id="dataListView"/>
+    </center>
+</BorderPane>

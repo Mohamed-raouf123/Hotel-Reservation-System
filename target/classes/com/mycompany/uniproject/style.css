@@ -1,0 +1,90 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #1a3a5c, #2d5986);
+    -fx-font-family: "Arial";
+}
+
+.button {
+    -fx-background-color: #c9a227;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24 10 24;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #a07d10;
+}
+
+.button:pressed {
+    -fx-background-color: #7d5f0a;
+}
+
+.text-field, .password-field {
+    -fx-background-color: white;
+    -fx-border-color: #b0bec5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #c9a227;
+    -fx-border-width: 2;
+}
+
+.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-border-color: #c9a227;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.list-cell {
+    -fx-padding: 10;
+    -fx-font-size: 12px;
+    -fx-text-fill: #1a3a5c;
+}
+
+.list-cell:selected {
+    -fx-background-color: #c9a227;
+    -fx-text-fill: white;
+}
+
+.list-cell:hover {
+    -fx-background-color: #e8f0fe;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #c9a227;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 6;
+}
+
+.text-area {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-border-color: #c9a227;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-padding: 8;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #c9a227;
+    -fx-background-radius: 4;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.uniproject.controllers.RoomBrowsingController"
+            prefWidth="800" prefHeight="600">
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15; -fx-background-color: #1a3a5c;">
+            <Label text="Available Rooms" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+    <center>
+        <ListView fx:id="roomsListView"/>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
+            <Button fx:id="bookRoomButton" text="Book Room" onAction="#handleBookRoom"/>
+            <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

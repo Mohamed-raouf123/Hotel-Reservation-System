@@ -1,0 +1,21 @@
+package com.mycompany.uniproject;
+public class Amenity {
+    private int id;
+    private String name;
+
+    public Amenity(int num, String n) { id = num; name = n; }
+
+    public void setId(int id) {
+        if (id < 0) throw new IllegalArgumentException("ID cannot be negative");
+        this.id = id;
+    }
+    public void setName(String name) {
+        if (name == null || name.isEmpty()) throw new IllegalArgumentException("Amenity name cannot be empty");
+        this.name = name;
+    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+
+    @Override
+    public String toString() { return "Amenities{id=" + id + ", name='" + name + "'}"; }
+}

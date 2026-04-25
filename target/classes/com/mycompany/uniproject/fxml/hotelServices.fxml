@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.uniproject.controllers.HotelServicesController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Hotel Services">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox fx:id="confirmationLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Select a Service:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="SPA: $150 | GYM: $50 | RESTAURANT: $100 | ROOM SERVICE: $75">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="serviceTypeComboBox" prefWidth="150.0" />
+            <Label text="Select Date:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="dateField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" promptText="YYYY-MM-DD" />
+            <Label text="Select Time:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="timeField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" promptText="HH:MM" />
+            <Label text="Details">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="detailsField" maxHeight="-Infinity" maxWidth="-Infinity" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="bookServiceButton" mnemonicParsing="false" onAction="#handleBookService" text="Book Service" />
+            <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleBack" text="Back " />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

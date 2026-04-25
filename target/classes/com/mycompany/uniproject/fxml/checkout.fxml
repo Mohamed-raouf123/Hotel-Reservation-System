@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.uniproject.controllers.CheckoutController"
+            prefWidth="800" prefHeight="600">
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 15; -fx-background-color: #1a3a5c;">
+            <Label text="Checkout &amp; Payment" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20;">
+            <Label text="Select Payment Method:" style="-fx-font-size: 14;"/>
+            <ComboBox fx:id="paymentMethodComboBox" promptText="Payment Method"/>
+            <Label text="Invoice:" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+            <Label fx:id="invoiceLabel" text="Invoice Detail" style="-fx-font-size: 12;" wrapText="true"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
+            <Button fx:id="confirmPaymentButton" text="Confirm Payment" onAction="#handleConfirmPayment"/>
+            <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>
