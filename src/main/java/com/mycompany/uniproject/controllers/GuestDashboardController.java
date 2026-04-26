@@ -1,12 +1,15 @@
 package com.mycompany.uniproject.controllers;
 
 import com.mycompany.uniproject.Guest;
+import com.mycompany.uniproject.Reservation;
+import com.mycompany.uniproject.ReservationStatus;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 public class GuestDashboardController {
@@ -19,6 +22,7 @@ public class GuestDashboardController {
     @FXML private Label balanceLabel;
     @FXML private Label reservationsLabel;
     @FXML private Button hotelServicesButton;
+    @FXML private ListView<String> activeReservationsListView;
 
     private Guest currentGuest;
 
@@ -26,6 +30,20 @@ public class GuestDashboardController {
         currentGuest = guest;
         welcomeLabel.setText("Welcome, " + guest.getUsername());
         balanceLabel.setText("Balance: $" + guest.getBalance());
+        loadActiveReservations();
+    }
+
+    private void loadActiveReservations() {
+        if (activeReservationsListView == null) return;
+        activeReservationsListView.getItems().clear();
+        for (Reservation r : currentGuest.getReservations()) {
+            if (r.getStatus() == ReservationStatus.PENDING || r.getStatus() == ReservationStatus.CONFIRMED) {
+                activeReservationsListView.getItems().add(r.toString());
+            }
+        }
+        if (activeReservationsListView.getItems().isEmpty()) {
+            activeReservationsListView.getItems().add("No active reservations");
+        }
     }
 
     @FXML
@@ -84,6 +102,7 @@ public class GuestDashboardController {
         scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
         stage.setScene(scene);
     }
+
     @FXML
     private void handleHotelServices() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/uniproject/fxml/hotelServices.fxml"));

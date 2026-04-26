@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mycompany.uniproject.controllers.RoomBrowsingController"
-            prefWidth="800" prefHeight="600">
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.uniproject.controllers.RoomBrowsingController">
     <top>
         <HBox alignment="CENTER" style="-fx-padding: 15; -fx-background-color: #1a3a5c;">
-            <Label text="Available Rooms" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;" text="Available Rooms" />
         </HBox>
     </top>
     <center>
-        <ListView fx:id="roomsListView"/>
+        <ListView fx:id="roomsListView" />
     </center>
     <bottom>
         <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
-            <Button fx:id="bookRoomButton" text="Book Room" onAction="#handleBookRoom"/>
-            <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+            <Button fx:id="bookRoomButton" onAction="#handleBookRoom" text="Book Room" />
+            <Button fx:id="backButton" onAction="#handleBack" text="Back" />
         </HBox>
     </bottom>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="CENTER" text="Filters" textAlignment="CENTER" />
+            <Label text="Room Type:" />
+            <ComboBox fx:id="typeFilterComboBox" prefWidth="150.0" />
+            <Label text="Max Price ($/night):" />
+            <TextField fx:id="maxPriceField" promptText="e.g. 500" />
+            <Label text="Required Amenities:" />
+            <ListView fx:id="amenityFilterListView" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleApplyFilters" text="Apply" />
+                  <Button mnemonicParsing="false" onAction="#handleClearFilters" text="Clear" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

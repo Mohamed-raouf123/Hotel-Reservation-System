@@ -56,11 +56,14 @@ public class RegisterController {
             Guest newGuest = new Guest(username, password, dob, 0.0, address, Gender.valueOf(gender), null, phone);
             HotelDatabase.guests.add(newGuest);
             newGuest.register();
+            AlertHelper.success("Account created successfully! You can now login.");
 
         } catch (EmptyFieldException | DuplicateUsernameException | InvalidAgeException e) {
-            System.out.println("Registration Error: " + e.getMessage());
+            AlertHelper.error(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            AlertHelper.error("Invalid input: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            AlertHelper.error("Error: " + e.getMessage());
         }
     }
 

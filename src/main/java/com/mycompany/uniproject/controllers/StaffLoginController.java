@@ -20,7 +20,7 @@ public class StaffLoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
         if (username.isEmpty() || password.isEmpty()) {
-            System.out.println("YOU MUST PROVIDE INFORMATION");
+            AlertHelper.warning("Please enter both username and password.");
             return;
         }
         for (int i = 0; i < HotelDatabase.admins.size(); i++) {
@@ -33,7 +33,6 @@ public class StaffLoginController {
                 Scene scene = new Scene(root, 800, 600);
                 scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
                 stage.setScene(scene);
-                System.out.println("ADMIN LOGIN SUCCESSFUL");
                 return;
             }
         }
@@ -47,11 +46,10 @@ public class StaffLoginController {
                 Scene scene = new Scene(root, 800, 600);
                 scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
                 stage.setScene(scene);
-                System.out.println("RECEPTIONIST LOGIN SUCCESSFUL");
                 return;
             }
         }
-        System.out.println("Invalid credentials");
+        AlertHelper.error("Invalid staff credentials.");
     }
 
     @FXML

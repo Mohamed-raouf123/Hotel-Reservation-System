@@ -24,10 +24,7 @@ public class ReservationManagementController {
     private void initialize() {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
             if (currentGuest != null) {
-                Platform.runLater(() -> {
-                    reservationsListView.getItems().clear();
-                    loadReservations();
-                });
+                Platform.runLater(() -> loadReservations());
             }
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -40,8 +37,12 @@ public class ReservationManagementController {
     }
 
     public void loadReservations() {
+        reservationsListView.getItems().clear();
         for (int i = 0; i < currentGuest.getReservations().size(); i++) {
             reservationsListView.getItems().add(currentGuest.getReservations().get(i).toString());
+        }
+        if (reservationsListView.getItems().isEmpty()) {
+            reservationsListView.getItems().add("No reservations found.");
         }
     }
 
@@ -72,14 +73,21 @@ public class ReservationManagementController {
     @FXML
     private void handleCancelReservation() {
         int selectedIndex = reservationsListView.getSelectionModel().getSelectedIndex();
-        if (selectedIndex == -1) {
-            System.out.println("A ERROR HAS OCCURED PLEASE CHOOSE A RESERVATION");
+        if (selectedIndex == -1 || selectedIndex >= currentGuest.getReservations().size()) {
+            AlertHelper.warning("Please select a reservation to cancel.");
             return;
         }
         Reservation reservation = currentGuest.getReservations().get(selectedIndex);
+        if (reservation.getStatus() == ReservationStatus.CANCELLED) {
+            AlertHelper.warning("This reservation is already cancelled.");
+            return;
+        }
+        if (reservation.getStatus() == ReservationStatus.COMPLETED) {
+            AlertHelper.warning("Cannot cancel a completed reservation.");
+            return;
+        }
         currentGuest.cancelReservation(reservation.getReservationId());
-        System.out.println("Cancel Reservation clicked!");
-        reservationsListView.getItems().clear();
+        AlertHelper.success("Reservation #" + reservation.getReservationId() + " cancelled. $" + reservation.calculateTotal() + " refunded.");
         loadReservations();
     }
 }

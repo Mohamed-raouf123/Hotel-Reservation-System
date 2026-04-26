@@ -56,19 +56,18 @@ public class HotelServicesController {
             HotelDatabase.services.add(service);
             currentGuest.setBalance(currentGuest.getBalance() - service.getCost());
 
-            System.out.println("========== SERVICE BOOKING CONFIRMATION ==========");
-            System.out.println("Service: " + service.getServiceType());
-            System.out.println("Date: " + service.getDate());
-            System.out.println("Time: " + service.getTime());
-            System.out.println("Details: " + service.getDetails());
-            System.out.println("Cost: $" + service.getCost());
-            System.out.println("Remaining Balance: $" + currentGuest.getBalance());
-            System.out.println("==================================================");
+            String confirmation = "Service: " + service.getServiceType() + "\n"
+                    + "Date: " + service.getDate() + "\n"
+                    + "Time: " + service.getTime() + "\n"
+                    + "Details: " + service.getDetails() + "\n"
+                    + "Cost: $" + service.getCost() + "\n"
+                    + "Remaining Balance: $" + currentGuest.getBalance();
+            AlertHelper.success(confirmation);
 
         } catch (EmptyFieldException | ServiceUnavailableException | InvalidTimeSlotException | InsufficientBalanceException | InvalidDateException e) {
-            System.out.println("Booking Error: " + e.getMessage());
+            AlertHelper.error(e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            AlertHelper.error("Booking error: " + e.getMessage());
         }
     }
 

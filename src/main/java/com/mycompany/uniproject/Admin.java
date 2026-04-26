@@ -7,12 +7,16 @@ public class Admin extends AdminReceptionist {
     }
 
     public void createRoom(int rn, RoomType roomtype) {
+        int currentCount = HotelDatabase.getRoomCountOfType(roomtype);
+        if (currentCount >= roomtype.getMaxCount()) {
+            throw new RoomTypeCapacityFullException("Cannot add more " + roomtype.getName() + " rooms. Maximum (" + roomtype.getMaxCount() + ") reached. Wait until one is unbooked or remove an existing one.");
+        }
         Room room = new Room(rn, roomtype);
         HotelDatabase.rooms.add(room);
     }
 
-    public void createRoomType(int i, String n, double p, int c) {
-        RoomType typies = new RoomType(i, n, p, c);
+    public void createRoomType(int i, String n, double p, int c, int max) {
+        RoomType typies = new RoomType(i, n, p, c, max);
         HotelDatabase.roomTypes.add(typies);
     }
 

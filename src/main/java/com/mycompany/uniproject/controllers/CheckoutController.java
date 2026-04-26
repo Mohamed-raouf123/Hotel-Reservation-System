@@ -30,12 +30,12 @@ public class CheckoutController {
     @FXML
     private void handleConfirmPayment() {
         if (paymentMethodComboBox.getValue() == null) {
-            System.out.println("Please select a payment method!");
+            AlertHelper.warning("Please select a payment method!");
             return;
         }
         Invoice invoice = currentGuest.checkout();
         if (invoice == null) {
-            System.out.println("No active reservations to checkout");
+            AlertHelper.warning("No active reservations to checkout.");
             return;
         }
         PaymentMethod paymentMethod = PaymentMethod.valueOf(paymentMethodComboBox.getValue());
@@ -68,10 +68,10 @@ public class CheckoutController {
                     throw new InvalidCardException("CVV must be 3 digits!");
                 }
 
-                System.out.println("Card ending in " + cardNumber.substring(12) + " accepted!");
+                AlertHelper.info("Card ending in " + cardNumber.substring(12) + " accepted.");
 
             } catch (InvalidCardException e) {
-                System.out.println("Card Error: " + e.getMessage());
+                AlertHelper.error("Card Error: " + e.getMessage());
                 return;
             }
         }
@@ -79,11 +79,11 @@ public class CheckoutController {
         try {
             currentGuest.payInvoice(invoice);
         } catch (InsufficientBalanceException e) {
-            System.out.println("Payment Error: " + e.getMessage());
+            AlertHelper.error("Payment Error: " + e.getMessage());
             return;
         }
         invoiceLabel.setText(invoice.toString());
-        System.out.println("Payment successful");
+        AlertHelper.success("Payment successful!\nTotal: $" + invoice.getTotalAmount() + "\nRemaining balance: $" + currentGuest.getBalance());
     }
 
     @FXML

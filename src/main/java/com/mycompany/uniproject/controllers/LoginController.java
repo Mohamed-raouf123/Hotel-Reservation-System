@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -22,27 +21,27 @@ public class LoginController {
     private void handleLogin() throws Exception {
         String username = usernameField.getText();
         String password = passwordField.getText();
-        boolean found = false;
+
+        if (username.isEmpty() || password.isEmpty()) {
+            AlertHelper.warning("Please enter both username and password.");
+            return;
+        }
+
         for (int i = 0; i < HotelDatabase.guests.size(); i++) {
-            if (HotelDatabase.guests.get(i).getUsername().equals(username)) {
-                if (HotelDatabase.guests.get(i).login(username, password)) {
-                    found = true;
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/uniproject/fxml/guestDashboard.fxml"));
-                    Parent root = loader.load();
-                    GuestDashboardController controller = loader.getController();
-                    controller.setGuest(HotelDatabase.guests.get(i));
-                    Stage stage = (Stage) loginButton.getScene().getWindow();
-                    Scene scene = new Scene(root, 800, 600);
-                    scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
-                    stage.setScene(scene);
-                    return;
-                }
+            Guest g = HotelDatabase.guests.get(i);
+            if (g.getUsername().equals(username) && g.login(username, password)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/uniproject/fxml/guestDashboard.fxml"));
+                Parent root = loader.load();
+                GuestDashboardController controller = loader.getController();
+                controller.setGuest(g);
+                Stage stage = (Stage) loginButton.getScene().getWindow();
+                Scene scene = new Scene(root, 800, 600);
+                scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
+                stage.setScene(scene);
                 return;
             }
         }
-        if (!found) {
-            System.out.println("Invalid login");
-        }
+        AlertHelper.error("Invalid username or password.");
     }
 
     @FXML

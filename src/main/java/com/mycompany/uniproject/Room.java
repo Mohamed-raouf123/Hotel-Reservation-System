@@ -37,8 +37,10 @@ public class Room {
     public void releaseRoom() { this.isAvailable = true; }
     public void removeAmenity(int id) {
         for (int i = 0; i < amenities.size(); i++) {
-            if (amenities.get(i).getId() == id) { amenities.remove(i); }
-            break;
+            if (amenities.get(i).getId() == id) {
+                amenities.remove(i);
+                break;
+            }
         }
     }
 
