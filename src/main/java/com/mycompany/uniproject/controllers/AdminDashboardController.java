@@ -1,6 +1,7 @@
 package com.mycompany.uniproject.controllers;
 
 import com.mycompany.uniproject.*;
+import com.mycompany.uniproject.DatabaseManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -111,6 +112,7 @@ public class AdminDashboardController {
                         }
                     }
                     AlertHelper.success("Room " + roomnumber + " added with " + newRoom.getAmenities().size() + " amenities.");
+                    DatabaseManager.saveRoom(newRoom);
                 }
             } catch (RoomTypeCapacityFullException e) {
                 AlertHelper.error("Capacity Error: " + e.getMessage());
@@ -133,6 +135,7 @@ public class AdminDashboardController {
                 ((Admin) currentAdmin).deleteRoom(roomnumber);
                 if (HotelDatabase.rooms.size() < sizeBefore) {
                     AlertHelper.success("Room #" + roomnumber + " deleted successfully.");
+                    DatabaseManager.deleteRoom(roomnumber);
                 } else {
                     AlertHelper.warning("Room #" + roomnumber + " not found.");
                 }

@@ -11,12 +11,13 @@ public class Testmain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        ChatServer.startServer();
         HotelDatabase.populateRoomtype();
         HotelDatabase.populateAmenities();
         HotelDatabase.populateGuest();
         HotelDatabase.populateStaff();
         HotelDatabase.populateRooms();
+        DatabaseManager.init();
+        ChatServer.startServer();
 
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/com/mycompany/uniproject/fxml/login.fxml")

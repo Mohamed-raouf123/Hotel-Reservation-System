@@ -73,7 +73,7 @@ public class GuestDashboardController {
         Parent root = loader.load();
         ReservationManagementController controller = loader.getController();
         controller.setGuest(currentGuest);
-        Stage stage = (Stage) browseRoomsButton.getScene().getWindow();
+        Stage stage = (Stage) myReservationsButton.getScene().getWindow();
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
         stage.setScene(scene);
@@ -85,7 +85,7 @@ public class GuestDashboardController {
         Parent root = loader.load();
         CheckoutController controller = loader.getController();
         controller.setGuest(currentGuest);
-        Stage stage = (Stage) browseRoomsButton.getScene().getWindow();
+        Stage stage = (Stage) checkoutButton.getScene().getWindow();
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/com/mycompany/uniproject/style.css").toExternalForm());
         stage.setScene(scene);

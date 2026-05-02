@@ -55,6 +55,7 @@ public class HotelServicesController {
 
             HotelDatabase.services.add(service);
             currentGuest.setBalance(currentGuest.getBalance() - service.getCost());
+            DatabaseManager.saveGuest(currentGuest);
 
             String confirmation = "Service: " + service.getServiceType() + "\n"
                     + "Date: " + service.getDate() + "\n"

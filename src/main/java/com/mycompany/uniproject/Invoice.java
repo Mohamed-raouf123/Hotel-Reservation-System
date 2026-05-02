@@ -20,14 +20,27 @@ public class Invoice {
         this.totalAmount = reservations.stream().mapToDouble(Reservation::calculateTotal).sum();
     }
 
-    public void generateInvoice() { System.out.println("Invoice generated for amount: $" + totalAmount); }
-    public void processPayment(PaymentMethod method) { this.paymentMethod = method; this.paymentDate = LocalDate.now(); System.out.println("Payment of $" + totalAmount + " processed via " + method); }
+    public void generateInvoice() {
+        System.out.println("Invoice generated for amount: $" + totalAmount);
+    }
+
+    public void processPayment(PaymentMethod method) {
+        this.paymentMethod = method;
+        this.paymentDate = LocalDate.now();
+        System.out.println("Payment of $" + totalAmount + " processed via " + method);
+    }
+
     public void pay(double amount) {
-        if (amount >= totalAmount) { this.paid = true; System.out.println("Invoice #" + invoiceId + " paid in full. Amount: $" + totalAmount);
+        if (amount >= totalAmount) {
+            this.paid = true;
+            System.out.println("Invoice #" + invoiceId + " paid in full. Amount: $" + totalAmount);
             for (Reservation r : reservations) {
-            r.setStatus(ReservationStatus.COMPLETED);
-        } }
-        else { System.out.println("Insufficient amount. Total due: $" + totalAmount); }
+                r.setStatus(ReservationStatus.COMPLETED);
+                r.getRoom().releaseRoom();
+            }
+        } else {
+            System.out.println("Insufficient amount. Total due: $" + totalAmount);
+        }
     }
 
     public double getTotalAmount() { return totalAmount; }

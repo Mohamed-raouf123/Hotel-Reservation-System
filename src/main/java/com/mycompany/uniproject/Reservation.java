@@ -27,13 +27,26 @@ public class Reservation {
         this.status = ReservationStatus.PENDING;
     }
 
-    public void confirmReservation() { this.status = ReservationStatus.CONFIRMED; System.out.println("Reservation confirmed."); }
-    public void cancelReservation() { room.setAvailable(true); this.status = ReservationStatus.CANCELLED; System.out.println("Reservation cancelled."); }
-    public double calculateTotal() { long nights = ChronoUnit.DAYS.between(checkInDate, checkOutDate); return nights * room.getRoomType().getPricePerNight(); }
+    public void confirmReservation() {
+        this.status = ReservationStatus.CONFIRMED;
+        System.out.println("Reservation confirmed.");
+    }
+
+    public void cancelReservation() {
+        room.setAvailable(true);
+        this.status = ReservationStatus.CANCELLED;
+        System.out.println("Reservation cancelled.");
+    }
+
+    public double calculateTotal() {
+        long nights = ChronoUnit.DAYS.between(checkInDate, checkOutDate);
+        return nights * room.getRoomType().getPricePerNight();
+    }
 
     public Guest getGuest() { return guest; }
     public void setGuest(Guest guest) { this.guest = guest; }
     public int getReservationId() { return reservationId; }
+    public void setReservationId(int id) { this.reservationId = id; } // FIX: needed for DB loading
     public Room getRoom() { return room; }
     public void setRoom(Room room) { this.room = room; }
     public LocalDate getCheckInDate() { return checkInDate; }
@@ -45,6 +58,9 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation #" + reservationId + " | Guest: " + guest.getUsername() + " | Room: " + room.getRoomnumber() + " | Check-in: " + checkInDate + " | Check-out: " + checkOutDate + " | Total: $" + calculateTotal() + " | Status: " + status;
+        return "Reservation #" + reservationId + " | Guest: " + guest.getUsername() +
+                " | Room: " + room.getRoomnumber() + " | Check-in: " + checkInDate +
+                " | Check-out: " + checkOutDate + " | Total: $" + calculateTotal() +
+                " | Status: " + status;
     }
 }

@@ -134,6 +134,8 @@ public class Guest {
     }
 
     public String getUsername() { return username; }
+    public String getPassword() { return password; }
+    public long getPhone() { return phone; }
     public LocalDate getDateOfBirth() { return dateOfBirth; }
     public double getBalance() { return balance; }
     public String getAddress() { return address; }

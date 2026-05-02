@@ -75,9 +75,10 @@ public class CheckoutController {
                 return;
             }
         }
-        invoice.processPayment(paymentMethod);
         try {
             currentGuest.payInvoice(invoice);
+            invoice.processPayment(paymentMethod);
+            DatabaseManager.saveGuest(currentGuest);
         } catch (InsufficientBalanceException e) {
             AlertHelper.error("Payment Error: " + e.getMessage());
             return;

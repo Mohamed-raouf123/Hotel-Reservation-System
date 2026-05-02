@@ -5,40 +5,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f732a272-2315-44c1-b32f-0539872f2732" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/AlertHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/HotelDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/HotelDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/RoomType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Testmain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/Testmain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/CheckoutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/GuestDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/GuestDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/HotelServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/HotelServicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReceptionistChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReceptionistChatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReceptionistDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReceptionistDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReservationManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/ReservationManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/RoomBrowsingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/RoomBrowsingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/StaffLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/uniproject/controllers/StaffLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mycompany/uniproject/fxml/guestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mycompany/uniproject/fxml/guestDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mycompany/uniproject/fxml/roomBrowsing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mycompany/uniproject/fxml/roomBrowsing.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/HotelDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/HotelDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/AdminDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/CheckoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/CheckoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/GuestDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/GuestDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/HotelServicesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/HotelServicesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReceptionistDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReceptionistDashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReservationManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReservationManagementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RoomBrowsingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RoomBrowsingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/StaffLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/StaffLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/guestDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/guestDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/roomBrowsing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/roomBrowsing.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/AdminReceptionist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Amenity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/CannotFireLastReceptionistException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/ChatServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/DuplicateUsernameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/EmptyFieldException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Gender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Guest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/GuestNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/HotelDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/HotelService$ServiceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/HotelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InsufficientBalanceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InsufficientWarningsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidAgeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidCardException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidDateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidPaymentException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidRoomNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/InvalidTimeSlotException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/PaymentMethod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Receptionist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Reservation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/ReservationStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomAlreadyBookedException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomNotAvailableException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomPreferences.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/RoomTypeCapacityFullException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/ServiceUnavailableException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/Testmain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/AdminDashboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/AlertHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/CheckoutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/GuestDashboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/HotelServicesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReceptionistChatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReceptionistDashboardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/ReservationManagementController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/RoomBrowsingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/controllers/StaffLoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/adminDashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/chat.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/checkout.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/guestDashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/hotelServices.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/receptionistChat.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/receptionistDashboard.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/reservationManagement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/roomBrowsing.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/fxml/staffLogin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mycompany/uniproject/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +136,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;milestone-2&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }

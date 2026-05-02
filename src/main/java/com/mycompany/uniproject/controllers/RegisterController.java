@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class RegisterController {
     @FXML private TextField usernameField;
@@ -48,7 +49,7 @@ public class RegisterController {
             LocalDate dob = LocalDate.parse(dobField.getText());
             long phone = Long.parseLong(phoneField.getText());
 
-            int age = LocalDate.now().getYear() - dob.getYear();
+            long age = ChronoUnit.YEARS.between(dob, LocalDate.now());
             if (age < 18) {
                 throw new InvalidAgeException("Guest must be at least 18 years old!");
             }
@@ -56,6 +57,7 @@ public class RegisterController {
             Guest newGuest = new Guest(username, password, dob, 0.0, address, Gender.valueOf(gender), null, phone);
             HotelDatabase.guests.add(newGuest);
             newGuest.register();
+            DatabaseManager.saveGuest(newGuest);
             AlertHelper.success("Account created successfully! You can now login.");
 
         } catch (EmptyFieldException | DuplicateUsernameException | InvalidAgeException e) {

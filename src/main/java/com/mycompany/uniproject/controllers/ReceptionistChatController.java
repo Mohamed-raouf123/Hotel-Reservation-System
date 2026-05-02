@@ -47,6 +47,10 @@ public class ReceptionistChatController {
     private void handleSend() {
         String message = messageField.getText();
         if (message.isEmpty()) return;
+        if (out == null) {
+            AlertHelper.warning("Not connected yet. Please wait a moment.");
+            return;
+        }
         out.println(message);
         chatArea.appendText("You: " + message + "\n");
         messageField.clear();

@@ -87,6 +87,9 @@ public class ReservationManagementController {
             return;
         }
         currentGuest.cancelReservation(reservation.getReservationId());
+        DatabaseManager.saveReservation(reservation);
+        DatabaseManager.saveRoom(reservation.getRoom());
+        DatabaseManager.saveGuest(currentGuest);
         AlertHelper.success("Reservation #" + reservation.getReservationId() + " cancelled. $" + reservation.calculateTotal() + " refunded.");
         loadReservations();
     }

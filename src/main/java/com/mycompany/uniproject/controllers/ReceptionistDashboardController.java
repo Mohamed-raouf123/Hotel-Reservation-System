@@ -107,6 +107,8 @@ public class ReceptionistDashboardController {
                 Reservation reservation = new Reservation(finalGuest, finalRoom, checkIn, checkOut);
                 HotelDatabase.reservations.add(reservation);
                 finalGuest.getReservations().add(reservation);
+                DatabaseManager.saveReservation(reservation);
+                DatabaseManager.saveRoom(finalRoom);
                 AlertHelper.success("Reservation #" + reservation.getReservationId() + " created for " + finalGuest.getUsername() + ".");
             } catch (InvalidDateException e) {
                 AlertHelper.error("Date Error: " + e.getMessage());
@@ -132,6 +134,7 @@ public class ReceptionistDashboardController {
                 for (int i = 0; i < HotelDatabase.reservations.size(); i++) {
                     if (HotelDatabase.reservations.get(i).getReservationId() == reservationId) {
                         HotelDatabase.reservations.get(i).confirmReservation();
+                        DatabaseManager.saveReservation(HotelDatabase.reservations.get(i));
                         AlertHelper.success("Guest checked in successfully for reservation #" + reservationId + ".");
                         return;
                     }
@@ -157,6 +160,8 @@ public class ReceptionistDashboardController {
                         Reservation r = HotelDatabase.reservations.get(i);
                         r.setStatus(ReservationStatus.COMPLETED);
                         r.getRoom().releaseRoom();
+                        DatabaseManager.saveReservation(r);
+                        DatabaseManager.saveRoom(r.getRoom());
                         AlertHelper.success("Guest checked out for reservation #" + reservationId + ". Room #" + r.getRoom().getRoomnumber() + " is now available.");
                         return;
                     }

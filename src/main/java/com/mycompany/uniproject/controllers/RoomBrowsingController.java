@@ -184,6 +184,8 @@ public class RoomBrowsingController {
                     Reservation reservation = new Reservation(currentGuest, selectedRoom, checkIn, checkout);
                     HotelDatabase.reservations.add(reservation);
                     currentGuest.getReservations().add(reservation);
+                    DatabaseManager.saveReservation(reservation);
+                    DatabaseManager.saveRoom(selectedRoom);
                     AlertHelper.success("Reservation made successfully!\nRoom #" + selectedRoom.getRoomnumber() + "\nTotal: $" + reservation.calculateTotal());
                     loadRooms();
                 }
